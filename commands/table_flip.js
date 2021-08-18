@@ -22,7 +22,6 @@ module.exports = {
                 break;
             default:
                 msg.reply("Don't have that command, try again.")
-                return;
         }
     },
 };
