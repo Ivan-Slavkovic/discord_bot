@@ -20,15 +20,15 @@ module.exports = {
         if (inputValue == 'start') {
             msg.reply("Game is about to start.")
             msg.reply("What is capital city of " + randomCountry.country)
-            console.log(randomCountry)
+            var userName = msg.author.username
+            var player = msg.author.id
+            players[player] = { number_of_points: point, playersName: userName }
             return;
         }
-        let userName = msg.author.username
-        let player = msg.author.id
+        console.log(randomCountry)
         if (point == undefined) {
             point = 0
         }
-        players[player] = { number_of_points: point, playersName: userName }
         console.log(players[player])
         if (inputValue === randomCountry.city) {
             msg.reply("Great job I know now who didn't sleep on geaography class! :)")
