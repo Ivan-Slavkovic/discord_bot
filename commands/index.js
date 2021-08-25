@@ -15,5 +15,6 @@ module.exports = {
 	Multi_player_game: require('./multigame'),
 	Roll: require('./roll'),
 	Multi_roll: require('./rollmulti'),
-	toUpperCase: require('./toUpper')
+	toUpperCase: require('./toUpper'),
+	Pravopis: require('./pravopis')
 };
