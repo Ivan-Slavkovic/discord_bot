@@ -13,5 +13,6 @@ module.exports = {
 	Nacionalna_Geografija: require('./nacionalna'),
 	Single_Player_game: require('./single.game'),
 	Multi_player_game: require('./multigame'),
-	Roll: require('./roll')
+	Roll: require('./roll'),
+	Multi_roll: require('./rollmulti')
 };

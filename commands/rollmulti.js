@@ -1,10 +1,11 @@
-let players = {}
 let roll
+let players = {}
+let maxRoll = -Infinity
 module.exports = {
     name: 'roll',
-    aliases: ['r'],
-    description: 'Roll to win',
-    cooldown: 2,
+    aliases: "r",
+    description: 'Roll game',
+    cooldown: 3,
     guildOnly: true,
     args: false,
     usage: false,
@@ -14,25 +15,20 @@ module.exports = {
             players = {
                 ...players, [msg.author.id]: {
                     roll: roll,
-                    username: username
+                    username: msg.author.username,
+                    maxRoll: maxRoll
                 }
             }
-            players[roll] = Math.ceil(Math.random() * 100)
-            let maxNumber
+            players[msg.author.id].roll = Math.ceil(Math.random() * 100)
+            console.log(players)
+            msg.reply(`Your roll is ${players[msg.author.id].roll}`)
+            // if (players[msg.author.id].maxRoll < players[msg.author.id].roll) {
+            //     players[msg.author.id].maxRoll = players[msg.author.id].roll
+            //     console.log(players)
+            // }
             setTimeout(() => {
-                for (let i = 0; i < players.length; i++) {
-                    if (maxNumber < players[msg.author.id].roll)
-                        maxNumber = players[i].roll
-                }
-                msg.reply(`The higest roll was: ${players[roll]}! The game has ended`)
-                    = undefined
+
             }, 10000)
-        } else if (players[roll]) {
-            let temproll = Math.ceil(Math.random() * 100)
-            if (temproll > roll) {
-                players[roll] = temproll
-            }
-            msg.reply(`Your roll was: ${temproll}!`)
         }
     },
 };

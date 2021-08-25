@@ -1,7 +1,7 @@
 let roll
 module.exports = {
     name: 'roll',
-    aliases: ['r'],
+    aliases: ['roll'],
     description: 'Roll to win',
     cooldown: 2,
     guildOnly: true,
