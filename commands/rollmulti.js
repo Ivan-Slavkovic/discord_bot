@@ -1,6 +1,6 @@
-let roll
 let players = {}
-let maxRoll = -Infinity
+let roll = []
+let yourMax = -Infinity
 module.exports = {
     name: 'roll',
     aliases: "r",
@@ -11,21 +11,18 @@ module.exports = {
     usage: false,
     // eslint-disable-next-line no-unused-vars
     execute(msg, args) {
-        if (msg.author.id) {
+        if (!players[msg.author.id]) {
             players = {
                 ...players, [msg.author.id]: {
-                    roll: roll,
+                    roll: [...players[msg.author.id].roll],
                     username: msg.author.username,
-                    maxRoll: maxRoll
+                    maxRoll: yourMax
                 }
             }
-            players[msg.author.id].roll = Math.ceil(Math.random() * 100)
+            players[msg.author.id].roll.push(Math.ceil(Math.random() * 100))
             console.log(players)
             msg.reply(`Your roll is ${players[msg.author.id].roll}`)
-            // if (players[msg.author.id].maxRoll < players[msg.author.id].roll) {
-            //     players[msg.author.id].maxRoll = players[msg.author.id].roll
-            //     console.log(players)
-            // }
+
             setTimeout(() => {
 
             }, 10000)
