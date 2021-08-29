@@ -13,6 +13,5 @@ module.exports = {
             inputValue[i] = inputValue[i][0].toUpperCase() + inputValue[i].slice(1)
         }
         msg.reply(inputValue.join(" "))
-        
     },
 };
