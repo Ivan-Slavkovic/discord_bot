@@ -21,7 +21,8 @@ module.exports = {
             if (inputValue[i].includes(".") || inputValue[i].includes("!") || inputValue[i].includes("?")) {
                 inputValue[i + 1][0] = inputValue[i][0].toUpperCase() + inputValue[i].slice(1)
             } else if (inputValue[i].includes(","))
-                
+                //not finished
+                console.log("Hello!")
         }
         console.log(inputValue.join(" "))
         msg.reply(inputValue.join(" "))

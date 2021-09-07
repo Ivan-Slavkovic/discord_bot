@@ -23,9 +23,9 @@ module.exports = {
             var userName = msg.author.username
             var player = msg.author.id
             players[player] = { number_of_points: point, playersName: userName }
+            console.log(randomCountry)
             return;
         }
-        console.log(randomCountry)
         if (point == undefined) {
             point = 0
         }
