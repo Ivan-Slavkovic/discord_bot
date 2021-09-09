@@ -1,5 +1,4 @@
 const fetch = require('node-fetch')
-const json = require('./node_modules/json/lib/json')
 module.exports = {
     name: 'quotes',
     aliases: ['Quote', 'q', 'Q'],
@@ -11,11 +10,13 @@ module.exports = {
     // eslint-disable-next-line no-unused-vars
     execute(msg, args) {
         let inputValue = args
+        let returnData
         if (inputValue.length == 1) {
             fetch(`https://api.quotable.io/random?tags=${inputValue[0]}`).then((result) => {
                 return result.json()
             }).then((result) => {
-                return msg.reply(result.content, result.author)
+                returnData = { content: result.content, author: result.author }
+                return msg.reply(returnData)
             }).catch((e) => {
                 return msg.reply(e)
             })
@@ -23,7 +24,8 @@ module.exports = {
             fetch(`https://api.quotable.io/random?tags=${inputValue[0], inputValue[1]}`).then((result) => {
                 return result.json()
             }).then((result) => {
-                return msg.reply(result.content, result.author)
+                //result.content, result.author
+                return msg.reply(returnData)
             }).catch((e) => {
                 return msg.reply(e)
             })

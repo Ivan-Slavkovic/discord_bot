@@ -17,5 +17,6 @@ module.exports = {
 	Multi_roll: require('./rollmulti'),
 	toUpperCase: require('./toUpper'),
 	Pravopis: require('./pravopis'),
-	RandomQuotes: require('./randomQuotes.js')
+	RandomQuotes: require('./randomQuotes.js'),
+	Quotes: require('./quotes')
 };
