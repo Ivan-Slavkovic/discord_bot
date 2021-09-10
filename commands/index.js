@@ -18,5 +18,7 @@ module.exports = {
 	toUpperCase: require('./toUpper'),
 	Pravopis: require('./pravopis'),
 	RandomQuotes: require('./randomQuotes.js'),
-	Quotes: require('./quotes')
+	Quotes: require('./quotes'),
+	RandomGifWithTag: require('./randomGifWithTag'),
+	RandomGif: require('./randomGIF')
 };
