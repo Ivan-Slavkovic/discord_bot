@@ -1,7 +1,7 @@
 var axios = require("axios").default;
 module.exports = {
     name: 'GIFTAG',
-    aliases: ['giftag', 'giftag'],
+    aliases: ['giftag', 'Giftag'],
     description: 'Gifs!',
     cooldown: 5,
     guildOnly: true,
